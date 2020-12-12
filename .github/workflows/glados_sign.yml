@@ -1,0 +1,22 @@
+name: glados_sign
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * *'
+  repository_dispatch:
+    types: joy
+
+jobs:
+  build:
+    runs-on: macos-latest
+
+    steps:
+      - name: 运行自动签到
+        run: | 
+        curl --location --request POST 'https://glados.rocks/api/user/checkin' \
+        --header 'cookie: ${{ secrets.COOKIE }}' \
+        --header 'Content-Type: text/plain' \
+        --data-raw '{
+            "token": "glados_network"
+        }'
