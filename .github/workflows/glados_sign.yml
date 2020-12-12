@@ -16,7 +16,7 @@ jobs:
         run: | 
           curl --location --request POST 'https://glados.rocks/api/user/checkin' \
           --header 'cookie: ${{ secrets.COOKIE }}' \
-          --header 'Content-Type: text/plain' \
+          --header 'Content-Type: application/json' \
           --data-raw '{
               "token": "glados_network"
           }'
