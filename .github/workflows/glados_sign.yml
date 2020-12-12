@@ -14,9 +14,9 @@ jobs:
     steps:
       - name: 运行自动签到
         run: | 
-        curl --location --request POST 'https://glados.rocks/api/user/checkin' \
-        --header 'cookie: ${{ secrets.COOKIE }}' \
-        --header 'Content-Type: text/plain' \
-        --data-raw '{
-            "token": "glados_network"
-        }'
+          curl --location --request POST 'https://glados.rocks/api/user/checkin' \
+          --header 'cookie: ${{ secrets.COOKIE }}' \
+          --header 'Content-Type: text/plain' \
+          --data-raw '{
+              "token": "glados_network"
+          }'
